@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fcf9f4;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: {
+          "on-primary": "#ffffff",
+          "on-surface": "#1d1b1a",
+          "on-secondary-container": "#7a5749",
+          "inverse-on-surface": "#f5f0ed",
+          "on-secondary-fixed": "#2d150a",
+          "surface-container-high": "#ede7e4",
+          "heading-text": "#9B6254",
+          "surface-variant": "#e7e1de",
+          "on-surface-variant": "#73564F",
+          "surface-container-highest": "#e7e1de",
+          "inverse-surface": "#32302e",
+          "tertiary-fixed": "#ffdad2",
+          "on-primary-fixed": "#370d02",
+          "on-primary-fixed-variant": "#6e3725",
+          "primary-fixed-dim": "#ffb59e",
+          "tertiary": "#865043",
+          "on-tertiary-fixed": "#351007",
+          "secondary-container": "#F8E5DC",
+          "secondary-fixed": "#ffdbcd",
+          "on-tertiary-fixed-variant": "#6a392d",
+          "primary-fixed": "#ffdbd0",
+          "on-secondary-fixed-variant": "#5f3f32",
+          "surface-container": "#F8E5DC",
+          "surface": "#FFF9F6",
+          "surface-dim": "#ded9d6",
+          "surface-container-low": "#F8E5DC",
+          "surface-container-lowest": "#FFFFFF",
+          "primary-action": "#D98F78",
+          "secondary-fixed-dim": "#eabdab",
+          "secondary": "#795648",
+          "on-secondary": "#ffffff",
+          "primary": "#9B6254",
+          "card-background": "#FFFFFF",
+          "on-tertiary": "#ffffff",
+          "tertiary-container": "#d29181",
+          "surface-bright": "#FFF9F6",
+          "on-primary-container": "#5c2918",
+          "outline-variant": "#EAD8D0",
+          "border-outline": "#EAD8D0",
+          "primary-container": "#D98F78",
+          "on-error": "#ffffff",
+          "inverse-primary": "#ffb59e",
+          "background": "#FFF9F6",
+          "on-tertiary-container": "#582b20",
+          "on-error-container": "#93000a",
+          "body-text": "#73564F",
+          "outline": "#EAD8D0",
+          "error-container": "#ffdad6",
+          "surface-tint": "#8b4e3b",
+          "tertiary-fixed-dim": "#fcb6a5",
+          "accent": "#EFC1AF",
+          "on-background": "#1d1b1a",
+          "error": "#ba1a1a"
+        }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-md": "1.25rem", "gutter-desktop": "2.5rem", "margin": "1.5rem", "margin-desktop": "5rem", "gutter": "1.5rem", "margin-tablet": "3rem", "space-xs": "0.375rem", "space-lg": "2rem", "space-xl": "3.5rem", "space-sm": "0.75rem" }, fontFamily: { "body-lg": ["DM Sans"], "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-md": ["Playfair Display"], "body-sm": ["DM Sans"], "headline-md": ["Playfair Display"], "body-md": ["DM Sans"], "display-md-mobile": ["Playfair Display"], "label-caps": ["DM Sans"], "display-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "headline-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"] }, fontSize: { "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "300" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "500" }], "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-md-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "500" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(89,68,61,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Return" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-primary hover:text-on-surface-variant transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">Workshop Dispatch</span><h1 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Whatsapp Dispatch Detail</h1></div></div><div class="flex items-center gap-space-sm"><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida/AEtjO1XjqIHGoe3KhDXEXu4fbvP0CJRyCjlunKUWJz2ciFtTTdnfgEF12WZFH6RDEs6V2FIxYfM1jXnpb8XEnnpVH6jOBeL8jrlWMos-UPRId7jSCS7KIX8JFZnXcpk9IeNPpiclLj8gYbXKpnAHnzpBHesQmShvwpI1cKrRtM5_q1PW26OoK_qZFCXgOCSX0VrqsH3T3YgzELCJWckrztvGOylWBKrgLac3Y4rOldmCra0XQzMQI6fgGwLrQvI"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Editorial Ribbon Intro -->
+<div class="px-5 pt-3 pb-4 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Client Dispatch Tracking</span>
+</div>
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Transmission Archive</h2>
+<span class="font-label-sm text-label-sm text-secondary">Order #07218</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Client preview of verified priority telemetries dispatched at release of custom keepsake parcel.
+    </p>
+</div>
+<!-- Interactive Dual Mode Switcher -->
+<div class="px-5 mb-5">
+<div class="bg-surface-container-high p-1 rounded-full flex items-center justify-between shadow-sm">
+<button class="flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 bg-primary text-on-primary shadow-sm" id="btn-toggle-all" onclick="setChannelFilter('all')">
+        Chosen View
+      </button>
+<button class="flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 text-on-surface-variant hover:text-primary" id="btn-toggle-ios" onclick="setChannelFilter('ios')">
+        iOS Lockscreen
+      </button>
+<button class="flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 text-on-surface-variant hover:text-primary" id="btn-toggle-wa" onclick="setChannelFilter('wa')">
+        WhatsApp Business
+      </button>
+</div>
+</div>
+<!-- CONTAINER 1: iOS Lockscreen Touchpoint Simulation -->
+<div class="px-4 mb-6 transition-all duration-500" id="section-ios">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-xl flex flex-col gap-4">
+<!-- Top simulated lockscreen status bar & clock -->
+<div class="flex flex-col items-center justify-center pt-2 pb-1 text-center">
+<div class="flex items-center gap-1.5 mb-1 text-secondary opacity-80">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">Secured Worldwide Link</span>
+</div>
+<span class="font-label-md text-label-md text-secondary tracking-normal">Wednesday, February 14</span>
+<span class="font-display-md-mobile text-display-md-mobile text-primary font-normal tracking-tight mt-0.5">16:45</span>
+</div>
+<!-- iOS Native Notification Card -->
+<div class="bg-surface-container rounded-xl p-3.5 shadow-md flex flex-col gap-2.5 transition-transform active:scale-[0.99]">
+<!-- App Header Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center shadow-inner text-on-primary">
+<span class="font-headline-sm text-[13px] italic leading-none font-bold">P</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary tracking-wide">PEACHE</span>
+<span class="font-label-sm text-[10px] text-secondary leading-none">Live Dispatch Tracking</span>
+</div>
+</div>
+<span class="font-label-sm text-[11px] text-secondary opacity-75">now</span>
+</div>
+<!-- Notification Content -->
+<div class="flex flex-col gap-1 pl-0.5">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Your Keepsake has Departed the Shop</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Order #ORD-2025-07218 (<span class="font-medium text-primary">The Paloma Ivory Pouch</span>) is in transit with BlueDart Apex Gold Specialist Vikram Rathore. Tamper seal <span class="font-mono text-secondary text-[11px] bg-surface-container-high px-1 rounded">#PEACHE-SEAL-8821</span> verified.
+          </p>
+</div>
+<!-- Quick Interaction Actions -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="bg-primary text-on-primary py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 shadow-sm active:opacity-90" onclick="triggerHapticFeedback('track')">
+<span class="material-symbols-outlined text-[15px]">fmd_good</span>
+<span class="font-label-caps text-[10px] tracking-wider uppercase">Track Worldwide</span>
+</button>
+<button class="bg-surface-container-high text-on-surface-variant py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 active:bg-surface-container-highest" onclick="triggerHapticFeedback('concierge')">
+<span class="material-symbols-outlined text-[15px]">headset_mic</span>
+<span class="font-label-caps text-[10px] tracking-wider uppercase">Contact Support</span>
+</button>
+</div>
+</div>
+<!-- Pill indicator note -->
+<div class="flex items-center justify-center gap-2 pt-1 pb-1">
+<span class="w-1 h-1 rounded-full bg-surface-tint"></span>
+<span class="font-label-caps text-[10px] text-secondary tracking-widest uppercase">Priority Notification • Dispatched / In Transit</span>
+<span class="w-1 h-1 rounded-full bg-surface-tint"></span>
+</div>
+</div>
+</div>
+<!-- CONTAINER 2: WhatsApp Business Verified Preview -->
+<div class="px-4 transition-all duration-500" id="section-wa">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col">
+<!-- WhatsApp Salon Header Bar -->
+<div class="bg-surface-container-highest px-3.5 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow">
+<span class="font-headline-sm text-headline-sm text-on-primary italic font-serif">P</span>
+</div>
+<!-- WhatsApp mini status pip -->
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-600 ring-2 ring-surface-container-highest"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-primary font-medium">PEACHE Support</span>
+<span class="material-symbols-outlined text-emerald-700 text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm text-[11px] text-secondary">Official Business Account • Active</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-secondary">
+<button aria-label="Call Concierge" class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface active:scale-95">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</div>
+<!-- WhatsApp Conversation Canvas Background -->
+<div class="bg-surface-container-low p-3.5 flex flex-col gap-3">
+<!-- Center Date Bubble -->
+<div class="self-center bg-surface-container-high px-3 py-0.5 rounded-full shadow-sm">
+<span class="font-label-caps text-[10px] text-secondary tracking-wider uppercase">Today, 16:42 IST</span>
+</div>
+<!-- WhatsApp Message Bubble (Client Received Message) -->
+<div class="self-start max-w-[94%] bg-surface-container-lowest rounded-xl p-2.5 shadow-md flex flex-col gap-2 relative">
+<!-- Media Card: Beaded Heirloom & Courier Tamper Inspection -->
+<div class="relative w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-44 object-cover" data-alt="An artisanal ivory beaded bridal handbag resting upon soft folded cream silk satin with mother of pearl beads shimmering under warm soft morning atelier sunlight. A luxury wax stamped gold cordage courier seal rests elegantly next to the monogram embroidered bespoke dustbag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnaJ1DEVqfLEsuvqZsZr7kCQGGTWbVYHnfGxlFSr0o8dgn4qiN5elYc6iSgKXobeO8yqG7mjXZBwkNZ7vVqXJvowS2no5JZmpeD3iS-F6LvV0k7KEwaQ3YQT7K507c5urak5OZ3bGoJPGpQMwJjlA49YLA3q0eil2Kh0CTYOWHKDaZ82Aw54Yf_zGJvPp7vctplLcST49WFN8hOjzCI8XRHpPGzboQKZGgtEEBDiU"/>
+<div class="absolute bottom-2 left-2 bg-primary/90 backdrop-blur-sm text-on-primary px-2 py-0.5 rounded font-label-caps text-[9px] tracking-widest uppercase">
+              Quality Passed
+            </div>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-mono text-[9px] text-primary">SEAL #8821</span>
+</div>
+</div>
+<!-- Message Text with Authentic WhatsApp Styling -->
+<div class="px-1 text-on-surface flex flex-col gap-2 font-body-sm text-body-sm leading-relaxed">
+<p>
+              Dear Sanjana, your custom commission <span class="font-medium text-primary">*The Paloma Ivory Pouch*</span> (Monogrammed ‘S. B.’) has completed 10-point inspection and is now in transit.
+            </p>
+<div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-1 text-[12px] leading-tight">
+<div class="flex items-center gap-1.5">
+<span class="text-[13px]">📍</span>
+<span class="text-on-surface-variant"><span class="font-medium text-primary">*Transit Node:*</span> Bandra-Worli Sea Link Southbound</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[13px]">⏱️</span>
+<span class="text-on-surface-variant"><span class="font-medium text-primary">*Est. Delivery:*</span> Tomorrow by 14:00 IST</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-[13px]">🛡️</span>
+<span class="text-on-surface-variant"><span class="font-medium text-primary">*AWB:*</span> #BLD-8849-2041-IN (BlueDart Apex Gold)</span>
+</div>
+</div>
+<p class="text-secondary text-[12px] italic">
+              Officer Vikram Rathore will request your tamper-proof verification OTP upon arrival.
+            </p>
+</div>
+<!-- Timestamp and Read Indicator inside WhatsApp Bubble -->
+<div class="self-end flex items-center gap-1 mt-0.5 pr-1">
+<span class="font-label-sm text-[10px] text-secondary">16:42</span>
+<!-- Double checkmarks icon -->
+<span class="material-symbols-outlined text-blue-500 text-[14px] leading-none">done_all</span>
+</div>
+<!-- Native WhatsApp Interactive Reply Buttons -->
+<div class="flex flex-col gap-1.5 pt-1.5 mt-1">
+<a class="w-full bg-surface-container hover:bg-surface-container-high py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 text-primary active:scale-[0.99] transition-transform" href="tracking-mobile.html">
+<span class="text-base">🚚</span>
+<span class="font-label-md text-label-md text-primary font-medium">Track Live Worldwide</span>
+</a>
+<button class="w-full bg-surface-container hover:bg-surface-container-high py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 text-primary active:scale-[0.99] transition-transform" onclick="triggerQuickReply('Artisan Concierge')">
+<span class="text-base">💬</span>
+<span class="font-label-md text-label-md text-primary font-medium">Speak to Maker Support</span>
+</button>
+<button class="w-full bg-surface-container hover:bg-surface-container-high py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 text-primary active:scale-[0.99] transition-transform" onclick="triggerQuickReply('Gate OTP Instructions')">
+<span class="text-base">📦</span>
+<span class="font-label-md text-label-md text-primary font-medium">Gate OTP Instructions</span>
+</button>
+</div>
+</div>
+<!-- Simulated Client Auto-Reply Preview Toast (Hidden initially) -->
+<div class="self-end max-w-[85%] bg-secondary-container text-on-secondary-container rounded-xl p-2.5 shadow-sm hidden flex-col gap-1 transition-all" id="reply-bubble">
+<span class="font-body-sm text-body-sm" id="reply-text">Thank you, requesting Gate OTP instructions.</span>
+<div class="self-end flex items-center gap-1">
+<span class="font-label-sm text-[10px] text-secondary">16:46</span>
+<span class="material-symbols-outlined text-secondary text-[13px]">done</span>
+</div>
+</div>
+</div>
+<!-- WhatsApp Quick Input Bar (Simulation) -->
+<div class="bg-surface-container-highest px-3 py-2 flex items-center gap-2">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</button>
+<div class="flex-1 bg-surface-container-lowest px-3 py-1.5 rounded-full flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm text-outline">Type a message to Peache...</span>
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+</div>
+<button class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Editorial Packaging & Transit Notes Footer Card -->
+<div class="px-4 mt-6">
+<div class="bg-surface-container p-4 rounded-xl flex items-start gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Guaranteed Transit</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          All PEACHE commissions travel inside custom climate-sealed velvet sleeves with numbered tamper locks. Live tracking is synced every 90 seconds.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter pill switching
+  function setChannelFilter(mode) {
+    const iosSection = document.getElementById('section-ios');
+    const waSection = document.getElementById('section-wa');
+    
+    const btnAll = document.getElementById('btn-toggle-all');
+    const btnIos = document.getElementById('btn-toggle-ios');
+    const btnWa = document.getElementById('btn-toggle-wa');
+
+    // Reset button states
+    [btnAll, btnIos, btnWa].forEach(btn => {
+      btn.className = "flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 text-on-surface-variant hover:text-primary";
+    });
+
+    if (mode === 'all') {
+      btnAll.className = "flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 bg-primary text-on-primary shadow-sm";
+      iosSection.style.display = 'block';
+      waSection.style.display = 'block';
+    } else if (mode === 'ios') {
+      btnIos.className = "flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 bg-primary text-on-primary shadow-sm";
+      iosSection.style.display = 'block';
+      waSection.style.display = 'none';
+    } else if (mode === 'wa') {
+      btnWa.className = "flex-1 py-2 text-center rounded-full font-label-caps text-label-caps transition-all duration-300 bg-primary text-on-primary shadow-sm";
+      iosSection.style.display = 'none';
+      waSection.style.display = 'block';
+    }
+  }
+
+  // Quick reply simulated interaction
+  function triggerQuickReply(topic) {
+    const replyBubble = document.getElementById('reply-bubble');
+    const replyText = document.getElementById('reply-text');
+    
+    if (replyBubble && replyText) {
+      replyText.textContent = topic === 'Artisan Concierge' 
+        ? "Connecting with Master Artisan Maitresse..." 
+        : "Requested delivery instructions: Handover with verified gate OTP.";
+      
+      replyBubble.classList.remove('hidden');
+      replyBubble.classList.add('flex');
+      
+      // Auto smooth scroll to bottom of conversation
+      replyBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function triggerHapticFeedback(action) {
+    if (window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate(25);
+    }
+  }
+</script></main></body></html>

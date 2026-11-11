@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PEACHE | Maker Beaded Handbag Workshop</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  ::-webkit-scrollbar { display: none; }
+
+  /* Motion & Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pearlShimmer {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    100% { transform: translateX(250%) skewX(-20deg); }
+  }
+
+  @keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @keyframes heartPop {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.35); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+
+  /* Shimmer button luster effect */
+  .btn-pearl-luster {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-pearl-luster::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-160%) skewX(-25deg);
+    pointer-events: none;
+  }
+  .btn-pearl-luster:hover::after {
+    animation: pearlShimmer 0.85s ease-out forwards;
+  }
+
+  /* Reveal animation baseline */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth luxury card transitions */
+  .luxury-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .luxury-card:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Heart interactive toggle */
+  .heart-btn {
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+  }
+  .heart-btn.is-active {
+    color: #c4685d !important;
+    animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .heart-btn.is-active .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Floating badge */
+  .floating-badge {
+    animation: subtleFloat 5s ease-in-out infinite;
+  }
+
+  /* Hero 3D Tilt perspective container */
+  .tilt-card-container {
+    perspective: 1200px;
+  }
+  .tilt-card {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{
+          "on-primary": "#ffffff",
+          "on-surface": "#1d1b1a",
+          "on-secondary-container": "#7a5749",
+          "inverse-on-surface": "#f5f0ed",
+          "on-secondary-fixed": "#2d150a",
+          "surface-container-high": "#ede7e4",
+          "heading-text": "#9B6254",
+          "surface-variant": "#e7e1de",
+          "on-surface-variant": "#73564F",
+          "surface-container-highest": "#e7e1de",
+          "inverse-surface": "#32302e",
+          "tertiary-fixed": "#ffdad2",
+          "on-primary-fixed": "#370d02",
+          "on-primary-fixed-variant": "#6e3725",
+          "primary-fixed-dim": "#ffb59e",
+          "tertiary": "#865043",
+          "on-tertiary-fixed": "#351007",
+          "secondary-container": "#F8E5DC",
+          "secondary-fixed": "#ffdbcd",
+          "on-tertiary-fixed-variant": "#6a392d",
+          "primary-fixed": "#ffdbd0",
+          "on-secondary-fixed-variant": "#5f3f32",
+          "surface-container": "#F8E5DC",
+          "surface": "#FFF9F6",
+          "surface-dim": "#ded9d6",
+          "surface-container-low": "#F8E5DC",
+          "surface-container-lowest": "#FFFFFF",
+          "primary-action": "#D98F78",
+          "secondary-fixed-dim": "#eabdab",
+          "secondary": "#795648",
+          "on-secondary": "#ffffff",
+          "primary": "#9B6254",
+          "card-background": "#FFFFFF",
+          "on-tertiary": "#ffffff",
+          "tertiary-container": "#d29181",
+          "surface-bright": "#FFF9F6",
+          "on-primary-container": "#5c2918",
+          "outline-variant": "#EAD8D0",
+          "border-outline": "#EAD8D0",
+          "primary-container": "#D98F78",
+          "on-error": "#ffffff",
+          "inverse-primary": "#ffb59e",
+          "background": "#FFF9F6",
+          "on-tertiary-container": "#582b20",
+          "on-error-container": "#93000a",
+          "body-text": "#73564F",
+          "outline": "#EAD8D0",
+          "error-container": "#ffdad6",
+          "surface-tint": "#8b4e3b",
+          "tertiary-fixed-dim": "#fcb6a5",
+          "accent": "#EFC1AF",
+          "on-background": "#1d1b1a",
+          "error": "#ba1a1a"
+        },borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-sm":"0.75rem","space-md":"1.25rem","space-xl":"3.5rem","space-lg":"2rem",margin:"1.5rem","margin-tablet":"3rem",gutter:"1.5rem","space-xs":"0.375rem","margin-desktop":"5rem","gutter-desktop":"2.5rem"},fontFamily:{"headline-lg":["Playfair Display"],"headline-sm":["Playfair Display"],"body-sm":["DM Sans"],"display-lg-mobile":["Playfair Display"],"label-md":["DM Sans"],"display-md":["Playfair Display"],"headline-md":["Playfair Display"],"display-md-mobile":["Playfair Display"],"label-caps":["DM Sans"],"display-lg":["Playfair Display"],"body-lg":["DM Sans"],"label-sm":["DM Sans"],"body-md":["DM Sans"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"0.01em",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"400"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"400"}],"label-md":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"500"}],"display-md":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"0.01em",fontWeight:"400"}],"display-md-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"400"}],"label-caps":["11px",{lineHeight:"16px",letterSpacing:"0.18em",fontWeight:"500"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",letterSpacing:"0.01em",fontWeight:"300"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"500"}],"body-md":["15px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased" data-page="index"><header class="fixed top-0 left-0 right-0 z-50 bg-[#FFF9F6]/95 backdrop-blur-md border-b border-[#EAD8D0]" id="site-header" style="font-family:'DM Sans',sans-serif"><div class="h-20 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between gap-4"><a aria-label="PEACHE home" class="flex items-center shrink-0" href="index.html"><img alt="PEACHE" class="h-8 md:h-9 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDElcbmP1PdGJWWRlpi_1O6fpP6TvRRE9YjbkE_AX5uyBEHnL1oW2ocjNuMZSx42R06u5a_e2WqH8CCLAQFanByN4SooKq45glOhzptM4PWFgztK0HsemNC85tobzbAm-B4kL4BueTj1HEKBepmHXk56dwajT_rUjscE6FH8cjl9MwsaD1N29PPo1vrOETqLA9UPikbfd9CxkCWVcPDSebOg6HmyKVYNJcqmkLAMKbLAyeWS5QmCVZxfA"/></a><nav class="hidden lg:flex items-center gap-8" id="site-nav"><a class="text-[11px] tracking-[0.18em] uppercase font-medium text-[#73564F] hover:text-[#9B6254] border-b-2 border-transparent pb-1 transition-colors" data-key="all" href="shop.html">Shop All</a><a class="text-[11px] tracking-[0.18em] uppercase font-medium text-[#73564F] hover:text-[#9B6254] border-b-2 border-transparent pb-1 transition-colors" data-key="pearl" href="shop.html?c=pearl">The Pearl Edit</a><a class="text-[11px] tracking-[0.18em] uppercase font-medium text-[#73564F] hover:text-[#9B6254] border-b-2 border-transparent pb-1 transition-colors" data-key="crystal" href="shop.html?c=crystal">The Crystal Edit</a><a class="text-[11px] tracking-[0.18em] uppercase font-medium text-[#73564F] hover:text-[#9B6254] border-b-2 border-transparent pb-1 transition-colors" data-key="wedding" href="shop.html?c=wedding">The Wedding Favour Edit</a></nav><div class="flex items-center gap-4 text-[#9B6254]"><button aria-label="Search" class="p-1 hover:text-[#D98F78]" id="site-search-btn" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><a aria-label="Account" class="p-1 hover:text-[#D98F78]" href="account.html"><span class="material-symbols-outlined text-[22px]">person</span></a><a aria-label="Shopping bag" class="relative p-1 hover:text-[#D98F78]" href="index.html#bag" id="cart-drawer-trigger"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded-full bg-[#D98F78] text-white text-[9px] leading-none" id="cart-counter" style="display:none">0</span></a><button aria-label="Menu" class="lg:hidden p-1" id="site-menu-btn" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden border-t border-[#EAD8D0] bg-[#FFF9F6]" id="site-search"><div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-3"><input class="w-full px-4 py-2.5 bg-white border border-[#EAD8D0] rounded text-[#73564F] focus:outline-none focus:border-[#D98F78]" id="site-search-input" placeholder="Search bags, then press Enter" type="search"/></div></div><nav class="hidden lg:hidden flex-col border-t border-[#EAD8D0] bg-[#FFF9F6] px-6 py-3 gap-3" id="mobile-nav"><a class="text-sm uppercase tracking-wider text-[#73564F] py-1" data-key="all" href="shop.html">Shop All</a><a class="text-sm uppercase tracking-wider text-[#73564F] py-1" data-key="pearl" href="shop.html?c=pearl">The Pearl Edit</a><a class="text-sm uppercase tracking-wider text-[#73564F] py-1" data-key="crystal" href="shop.html?c=crystal">The Crystal Edit</a><a class="text-sm uppercase tracking-wider text-[#73564F] py-1" data-key="wedding" href="shop.html?c=wedding">The Wedding Favour Edit</a></nav></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO BANNER -->
+<section class="relative w-full overflow-hidden bg-surface py-space-xl lg:py-24">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
+<!-- Left Editorial Copy (5 cols) -->
+<div class="lg:col-span-5 flex flex-col items-start z-10 reveal-on-scroll is-revealed">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/60 text-primary mb-space-md border border-outline-variant/30 shadow-xs hover:bg-secondary-container transition-colors cursor-default">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Made to order • Handmade</span>
+</div>
+<h1 class="font-headline-lg text-display-lg text-primary leading-[1.08] mb-space-md tracking-tight">
+            Little details.<br/>
+<span class="italic font-normal text-primary-container">Beautiful statements.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary font-light max-w-md mb-space-lg leading-relaxed">
+            Beaded handbags made by hand to make every moment special. Each bag is made with care, just for you.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md w-full sm:w-auto">
+<a class="btn-pearl-luster inline-flex justify-center items-center px-8 py-4 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-[0.18em] rounded hover:bg-primary transition-all duration-300 shadow-sm hover:shadow-lg active:scale-95" href="#collection-edits">
+              EXPLORE COLLECTION
+            </a>
+<a class="group inline-flex justify-center items-center px-6 py-4 text-primary font-label-caps text-label-caps uppercase tracking-[0.16em] hover:text-primary-container transition-colors gap-2" href="#wedding-favours">
+<span class="">Favours Support</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1.5 transition-transform duration-300">arrow_forward</span>
+</a>
+</div>
+<div class="mt-space-xl pt-space-md flex items-center gap-space-lg text-on-surface-variant">
+<div class="flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<span class="font-headline-sm text-headline-sm text-primary">100%</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary">Handmade</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/40"></div>
+<div class="flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<span class="font-headline-sm text-headline-sm text-primary">5–15 d</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary">Delivery in India</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/40"></div>
+<div class="flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<span class="font-headline-sm text-headline-sm text-primary">Custom</span>
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary">Your Initials</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual Pedestal (7 cols) with 3D Tilt Effect -->
+<div class="lg:col-span-7 relative mt-space-lg lg:mt-0 tilt-card-container reveal-on-scroll is-revealed">
+<div class="tilt-card relative w-full aspect-[4/3] md:aspect-[16/11] lg:aspect-[4/3] overflow-hidden rounded-xl bg-surface-container-low shadow-xl cursor-pointer" id="hero-tilt-card" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+<img alt="Artisan pearl and crystal bridal beaded handbag draped softly over champagne silk fabric" class="w-full h-full object-cover object-center transform hover:scale-[1.03] transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF01JlMP7HydBZMT9o_80QrjWvNn1kDLvudG4UZcly6ojb_azSYuOBgumBKTNmMtYyPnCuRIaZ1OKPtOtuWVNefs2L2nqTO3wfdgC0xZ-wGNrATl9nzqArT4w1VQEaDqG_vkfWIgUU-aBWeZX3Jd5t4oyoYdFP3RdHoZNdM1hgonZvRVmP6IgoUzfKF1JMuEhe6gt4F7oDRi_N17c8UQ4YBbb_mwyjQIoLIiK3_50l"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-on-primary pointer-events-none">
+<span class="floating-badge font-label-caps text-label-caps tracking-widest uppercase bg-surface/85 text-primary backdrop-blur-md px-3.5 py-1.5 rounded shadow-sm border border-outline-variant/30">The Aurelia Pearl Frame • Archive No. 01</span>
+<span class="hidden sm:inline font-body-sm text-body-sm text-surface-container-lowest font-light drop-shadow">Lustre Freshwater Beads</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: EXPLORE THE EDITS -->
+<section class="w-full bg-surface-container-lowest py-space-xl lg:py-28" id="collection-edits">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl reveal-on-scroll is-revealed">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.2em] mb-2 block">Our Collections</span>
+<h2 class="font-headline-lg text-display-md text-primary leading-tight">Explore the Edits</h2>
+</div>
+<p class="font-body-md text-body-md text-secondary font-light max-w-sm mt-3 md:mt-0">
+          Three collections: pearl bags, crystal bags, and bags for weddings.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter lg:gap-gutter-desktop">
+<!-- Edit 1: The Pearl Edit -->
+<article class="luxury-card group flex flex-col bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl reveal-on-scroll is-revealed">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="High-end editorial close up of a luxurious cream pearl-beaded top-handle tote bag resting softly on folded raw silk linen, soft morning golden sunlight, subtle warm ivory and champagne glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAyqzuz551-4QS4dNIx95qQjROJx-FuHtvK-rQK6drEqMBuEyaMZzhDF7ZgXWT4ZDLm6gkNA0Jxo3ZD8mFi6RvhPe9qmOWosdFQXTOhEpKes5OaUh6Trf5ry8EABN0a71-t4wzNgR495x1Q8Jwa9Zn-HONhhFWSCG8lgt6PqukrlQ9URfb-n41OhzNL3GwNjY8lEO8oCewWZzZuvLunbmyf-uHrAGVUsxnkvp1rwa"/>
+<span class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm text-primary font-label-caps text-[10px] tracking-widest px-2.5 py-1 rounded uppercase border border-outline-variant/30">Pearl</span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between bg-surface">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-primary-container transition-colors">The Pearl Edit</h3>
+<p class="font-body-sm text-body-sm text-secondary font-light mb-space-md leading-relaxed">
+                Beaded handbags made with pearls. Soft, shiny and classic.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary group-hover:translate-x-1.5 transition-transform" href="#bestsellers" onclick="filterBestsellers('pearl')">
+<span class="">SEE THE BAGS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Edit 2: The Crystal Edit -->
+<article class="luxury-card group flex flex-col bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl reveal-on-scroll is-revealed">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="An ornate crystal beaded evening bag catching radiant light beams, faceted cut crystals glistening on warm taupe background, luxury fashion editorial still life, delicate reflections and refined luxury aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKm2i0eskBjjpTOrULSUUoD906dLOM_vqWTCOLcrmm6vDplrO4xGSQVf0qkEwuETdT6ud-LVeVUbJQ-N6eYRhF7RrsJOjXksGcwE39koGSw_xf_nooillIoamH2KtQ5ea6CdS8-d4AiIaWZTiM2gJaCMjnPcSpSnvInEHBWNbcxjJiCc53msj2BjQvorFZ7JB8eH0gYYwbrvWJAm8X04rKRFEWmX_zdp5HuZr5zQL9"/>
+<span class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm text-primary font-label-caps text-[10px] tracking-widest px-2.5 py-1 rounded uppercase border border-outline-variant/30">Crystal</span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between bg-surface">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-primary-container transition-colors">The Crystal Edit</h3>
+<p class="font-body-sm text-body-sm text-secondary font-light mb-space-md leading-relaxed">
+                Beaded handbags with sparkling crystals. Made for evenings and parties.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary group-hover:translate-x-1.5 transition-transform" href="#bestsellers" onclick="filterBestsellers('crystal')">
+<span class="">SEE THE BAGS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Edit 3: The Wedding Favour Edit -->
+<article class="luxury-card group flex flex-col bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl reveal-on-scroll is-revealed">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="Multiple miniature bespoke beaded pouches arranged artfully as luxury wedding return favours, bespoke pearl monograms, delicate ribbon tags, arranged on champagne beige table with floral sprigs and calligraphed guest cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_56lN6FITg5jh9OlnEtxyaHJHPXpkiSYjMAuTsDCDvjPiNuwxqojUaDjllrXe8Xo39xmDbGkrEegK04CpuronO86SSElCoPIiI7Pn1gbo2hTjxcUIFErLJhy_ydWoC02POmTQr9iJe8zsFbtOpQOVT0H6-BVYQA1O4RQOx2mdHUZf-MPTUWGd2ZR-XhtpeRkxfPaYJLWBOtgnKn4pme4iSrBzcU9SM812Lwf3JwWG"/>
+<span class="absolute top-4 left-4 bg-secondary-container text-primary font-label-caps text-[10px] tracking-widest px-2.5 py-1 rounded uppercase border border-outline-variant/30">For Guests</span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between bg-surface">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-primary-container transition-colors">The Wedding Favour Edit</h3>
+<p class="font-body-sm text-body-sm text-secondary font-light mb-space-md leading-relaxed">
+                Small beaded bags to give your wedding guests. Add your initials and pick your colours.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary group-hover:translate-x-1.5 transition-transform" href="#wedding-favours">
+<span class="">SEE THE BAGS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 3: BESTSELLERS (ORDER-BASED ATELIER) -->
+<section class="w-full bg-surface py-space-xl lg:py-28" id="bestsellers">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-lg reveal-on-scroll is-revealed">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.22em] mb-2 block">Made After You Order</span>
+<h2 class="font-headline-lg text-display-md text-primary mb-3">Popular Bags</h2>
+<p class="font-body-md text-body-md text-secondary font-light">
+          Each bag is made by hand after you order, so no two bags are exactly the same.
+        </p>
+</div>
+<!-- Interactive Filter Pills -->
+<div class="flex items-center justify-center gap-2 sm:gap-3 mb-space-xl flex-wrap reveal-on-scroll is-revealed" id="filter-pills">
+<button class="filter-pill px-4 py-1.5 rounded-full font-label-caps text-[11px] tracking-wider uppercase transition-all duration-300 bg-primary-container text-on-primary shadow-xs" data-filter="all">All Portfolios</button>
+<button class="filter-pill px-4 py-1.5 rounded-full font-label-caps text-[11px] tracking-wider uppercase transition-all duration-300 bg-surface-container-high text-secondary hover:text-primary hover:bg-secondary-container" data-filter="pearl">Pearl Edit</button>
+<button class="filter-pill px-4 py-1.5 rounded-full font-label-caps text-[11px] tracking-wider uppercase transition-all duration-300 bg-surface-container-high text-secondary hover:text-primary hover:bg-secondary-container" data-filter="crystal">Crystal Edit</button>
+<button class="filter-pill px-4 py-1.5 rounded-full font-label-caps text-[11px] tracking-wider uppercase transition-all duration-300 bg-surface-container-high text-secondary hover:text-primary hover:bg-secondary-container" data-filter="favour">Wedding Favours</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" id="product-grid">
+<!-- Item 1 -->
+<div class="luxury-card group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden p-3 shadow-sm hover:shadow-xl reveal-on-scroll is-revealed" data-category="pearl">
+<div class="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="The Aurelia Pearl Tote handbag in crisp detail, crafted with glistening multi-sized faux pearls, architectural arch handle, pristine white marble pedestal background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRyypm3o1lyzNC06cJH1_Lug1AQ-lD9IaEpJMxo578i7aBhw84Rj7OIx0lY-0mwMN8eYdrhBn__J-lfCiku60WvVx4RHfSzLsbVa7gwsL6Hc76h1E5QZnQCd9odxct_tqUTjVs2pH9X8aX2mvypXbrDC4qdrmxug6Dhy7SDLAbQPPy-vJde9vU2JBjL3y2lMbA09-LOQAwcruU7MKBLuMDcUx_v3M-DoC8970AY7kg"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary px-2.5 py-1 rounded font-label-caps text-[10px] tracking-wider border border-outline-variant/30">
+              Delivery in 5–15 days
+            </div>
+<button aria-label="Add to Wishlist" class="heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/85 backdrop-blur-sm hover:bg-surface flex items-center justify-center text-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<!-- Interactive Quick Action Drawer on Hover -->
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
+<button class="w-full py-2 bg-surface/95 backdrop-blur text-primary text-[11px] font-label-caps uppercase tracking-wider rounded shadow hover:bg-surface transition-colors" onclick="openRequestModal('The Aurelia Pearl Tote', '₹18,500')">
+                Ask About This Bag
+              </button>
+</div>
+</div>
+<div class="flex flex-col flex-1 px-1">
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary mb-1">Pearl Edit</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">The Aurelia Pearl Tote</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light line-clamp-2 mb-3">
+              Pearl beads strung by hand, with a firm pearl handle.
+            </p>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-medium">₹18,500</span>
+<button class="btn-pearl-luster px-3.5 py-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase rounded hover:bg-primary transition-all duration-300 active:scale-95 shadow-xs" onclick="openRequestModal('The Aurelia Pearl Tote', '₹18,500')">
+                Request Order
+              </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="luxury-card group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden p-3 shadow-sm hover:shadow-xl reveal-on-scroll is-revealed" data-category="crystal">
+<div class="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="The Celestia Crystal Minaudiere evening bag with intricate faceted crystal lattice pattern and brushed brass clasp, sitting atop folded champagne satin linen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOA7xcx3pq2HBhgL2DQccKNgSEHSXC0sen7yKUbPwjw55WzYNRjnDwGp_St9oljhNu4fuvO8N9dsu31ixEGv1VhxG1pwE3O-jPdg1wNH2M6I0DzlN7GzQqDmvial3xXyoFe4tPx5Im0QAYB6ek4Ffg3zn1m4KpOpSOXM7xm6NM1o32E_xzgbZDkuEP_jmzdfUKrzyxoT1vhze2jzn-4vVCNvtbtPN39S6Ar1hY9RF6"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary px-2.5 py-1 rounded font-label-caps text-[10px] tracking-wider border border-outline-variant/30">
+              Delivery in 5–15 days
+            </div>
+<button aria-label="Add to Wishlist" class="heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/85 backdrop-blur-sm hover:bg-surface flex items-center justify-center text-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<!-- Interactive Quick Action Drawer on Hover -->
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
+<button class="w-full py-2 bg-surface/95 backdrop-blur text-primary text-[11px] font-label-caps uppercase tracking-wider rounded shadow hover:bg-surface transition-colors" onclick="openRequestModal('The Celestia Minaudière', '₹22,000')">
+                Ask About This Bag
+              </button>
+</div>
+</div>
+<div class="flex flex-col flex-1 px-1">
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary mb-1">Crystal Edit</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">The Celestia Minaudière</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light line-clamp-2 mb-3">
+              Intricate faceted crystal lattice with brass-finish clasp, engineered for dramatic evening light.
+            </p>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-medium">₹22,000</span>
+<button class="btn-pearl-luster px-3.5 py-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase rounded hover:bg-primary transition-all duration-300 active:scale-95 shadow-xs" onclick="openRequestModal('The Celestia Minaudière', '₹22,000')">
+                Request Order
+              </button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="luxury-card group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden p-3 shadow-sm hover:shadow-xl reveal-on-scroll is-revealed" data-category="pearl">
+<div class="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="The Paloma Ivory Pouch handheld beaded bucket bag with gathered pure silk drawstring lining and shimmering off-white beadwork on warm neutral pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5cJRbQC8jKLluwKnsT2Ps8i48z4sUmBaFVCDTgUzeA1UlkRlsL5plTA_O7KSctUIo2XPru0SHwyCynUnQKuNwLUPeVGG0VtYZmbo974efJ8Uk7loX7hLT0Tbaf1tF9qVFz_UyylZbnWQxYGVHJmyHu1awO1Uvh6ZG2KJoFx15HmS9MejjQXr3kmth7xBtko2GHVUnyoDP9xJaTz3OzHwS0BLoOgq39lQBoiX2gxiA"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary px-2.5 py-1 rounded font-label-caps text-[10px] tracking-wider border border-outline-variant/30">
+              Delivery in 5–15 days
+            </div>
+<button aria-label="Add to Wishlist" class="heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/85 backdrop-blur-sm hover:bg-surface flex items-center justify-center text-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<!-- Interactive Quick Action Drawer on Hover -->
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
+<button class="w-full py-2 bg-surface/95 backdrop-blur text-primary text-[11px] font-label-caps uppercase tracking-wider rounded shadow hover:bg-surface transition-colors" onclick="openRequestModal('The Paloma Ivory Pouch', '₹14,800')">
+                Ask About This Bag
+              </button>
+</div>
+</div>
+<div class="flex flex-col flex-1 px-1">
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary mb-1">Keepsake Classic</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">The Paloma Ivory Pouch</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light line-clamp-2 mb-3">
+              Soft pearl weave with gathered satin drawstring lining and flexible handheld beaded tassel.
+            </p>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-medium">₹14,800</span>
+<button class="btn-pearl-luster px-3.5 py-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase rounded hover:bg-primary transition-all duration-300 active:scale-95 shadow-xs" onclick="openRequestModal('The Paloma Ivory Pouch', '₹14,800')">
+                Request Order
+              </button>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="luxury-card group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden p-3 shadow-sm hover:shadow-xl reveal-on-scroll is-revealed" data-category="favour">
+<div class="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" data-alt="The Elowen Guest Keepsake miniature beaded envelope bag with bespoke gold initial monogram beading, delicate wristlet pearl strap, elegant boutique packaging box beside it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYbZsxAix6Om9FNDE6RDuXMZBTiB7ZXWFW0vdwijk9HM_S_b81JbmwYtkDPeVkltTfJNLbWVgbrejmpfaS-nczAtoPqofA87qObPveOUuan_5-zVri0q8KW_ZG7WFBONZAZheoyy5OOK5tPIm6Vh6w6zf3AyEhPSajWXKT0hxeTg8Si3RY4wlXzaq13iJCi1k-51qlqvbMiIdQXM2pGIbNWqDg-ah4F-VnILe23Rge"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-primary px-2.5 py-1 rounded font-label-caps text-[10px] tracking-wider border border-outline-variant/30">
+              Guest Favour Special
+            </div>
+<button aria-label="Add to Wishlist" class="heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/85 backdrop-blur-sm hover:bg-surface flex items-center justify-center text-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<!-- Interactive Quick Action Drawer on Hover -->
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center">
+<button class="w-full py-2 bg-surface/95 backdrop-blur text-primary text-[11px] font-label-caps uppercase tracking-wider rounded shadow hover:bg-surface transition-colors" onclick="openRequestModal('The Elowen Guest Keepsake', '₹9,500')">
+                Ask About This Bag
+              </button>
+</div>
+</div>
+<div class="flex flex-col flex-1 px-1">
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-secondary mb-1">Wedding Favour</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">The Elowen Guest Keepsake</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light line-clamp-2 mb-3">
+              Wedding favour edit with custom monogram beadwork, personalized color schemes for attendees.
+            </p>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-medium">₹9,500</span>
+<button class="btn-pearl-luster px-3.5 py-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase rounded hover:bg-primary transition-all duration-300 active:scale-95 shadow-xs" onclick="openRequestModal('The Elowen Guest Keepsake', '₹9,500')">
+                Request Order
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: THE SIGNATURE EDIT (EDITORIAL HERO SPLIT) -->
+<section class="w-full bg-surface-container py-space-xl lg:py-32 overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
+<!-- Visual (7 cols) -->
+<div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll is-revealed">
+<div class="luxury-card relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-xl group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Atelier workshop table showing hands of a master bead artisan threading iridescent pearl beads with fine silk cordage, surrounded by brass findings, velvet trays, and finished bespoke couture bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnTA8_9Jcs9QW2pxvuMQxCbsekSs0BFQ0Av6K3pnT0f0_l4SmiphCXnFy0jdQoeVBtGPf3SUXukTv9KGecS6JiOaL0h15bXiRamFKcap1sgqooBCBCnsOQx9WD5lMpqg6D-xrmgew_LsRrkaU_HB-0_niXPzl8Ib26FYGOQxEgg7EKLTxjVopTIMfQyTxbNOi4G--6w7GUsUmVHX6OXjyresbDkZvdbqn3kd-54WNa"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<div class="absolute top-6 left-6 bg-surface/90 backdrop-blur-md px-4 py-2 rounded text-primary border border-outline-variant/30 shadow-sm">
+<span class="font-label-caps text-label-caps tracking-widest uppercase">Our Latest Bags</span>
+</div>
+</div>
+</div>
+<!-- Narrative (5 cols) -->
+<div class="lg:col-span-5 order-1 lg:order-2 flex flex-col items-start lg:pl-space-md reveal-on-scroll is-revealed">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.2em] mb-space-xs">Special Bags</span>
+<h2 class="font-headline-lg text-display-md text-primary leading-tight mb-space-md">
+            Pieces worth remembering.
+          </h2>
+<p class="font-body-lg text-body-lg text-secondary font-light mb-space-lg leading-relaxed">
+            Special PEACHE designs made in small numbers, with shiny pearl beads and careful hand work.
+          </p>
+<div class="flex items-center gap-space-md">
+<a class="btn-pearl-luster px-8 py-4 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-wider rounded hover:bg-primary transition-all duration-300 shadow-sm hover:shadow-lg active:scale-95" href="#collection-edits">
+              SHOP SPECIAL BAGS
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: WEDDING FAVOUR EDIT FEATURE -->
+<section class="w-full bg-surface py-space-xl lg:py-28" id="wedding-favours">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl lg:p-16 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
+<!-- Text Info (6 cols) -->
+<div class="lg:col-span-6 flex flex-col items-start z-10 reveal-on-scroll is-revealed">
+<span class="px-3 py-1 bg-secondary-container text-primary rounded-full font-label-caps text-[11px] tracking-wider uppercase mb-space-sm border border-outline-variant/30">
+              Gifts for Wedding Guests
+            </span>
+<h2 class="font-headline-lg text-display-md text-primary mb-space-md leading-tight">
+              A beautiful thank-you for every guest.
+            </h2>
+<p class="font-body-lg text-body-lg text-secondary font-light mb-space-lg leading-relaxed">
+              Give your wedding guests a small beaded bag to remember the day. Pick your colours, add initials, and order in bulk.
+            </p>
+<!-- 3 Key Gifting Perks -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md w-full mb-space-lg">
+<div class="luxury-card flex flex-col bg-surface-container-lowest p-4 rounded-lg shadow-xs hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary mb-2 text-[24px]">draw</span>
+<span class="font-label-md text-label-md text-primary font-medium mb-1">Add Initials</span>
+<span class="font-body-sm text-[12px] text-secondary">Initials beaded on the bag</span>
+</div>
+<div class="luxury-card flex flex-col bg-surface-container-lowest p-4 rounded-lg shadow-xs hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary mb-2 text-[24px]">palette</span>
+<span class="font-label-md text-label-md text-primary font-medium mb-1">Custom Colourways</span>
+<span class="font-body-sm text-[12px] text-secondary">Matched to your wedding colours</span>
+</div>
+<div class="luxury-card flex flex-col bg-surface-container-lowest p-4 rounded-lg shadow-xs hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary mb-2 text-[24px]">featured_seasonal_and_gifts</span>
+<span class="font-label-md text-label-md text-primary font-medium mb-1">Free Gift Box</span>
+<span class="font-body-sm text-[12px] text-secondary">Ivory box with a ribbon</span>
+</div>
+</div>
+<button class="btn-pearl-luster px-8 py-4 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-wider rounded hover:bg-primary transition-all duration-300 shadow-md active:scale-95" onclick="document.getElementById('favour-modal').classList.remove('hidden')">
+              ENQUIRE FOR WEDDING FAVOURS
+            </button>
+</div>
+<!-- Feature Visual (6 cols) -->
+<div class="lg:col-span-6 mt-space-lg lg:mt-0 relative reveal-on-scroll is-revealed">
+<div class="luxury-card aspect-square md:aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An array of elegant wedding guest favour beaded purses placed beautifully on an Indian royal wedding reception banquet table, surrounded by tuberose jasmine flowers, soft candlelight, and personalized gift tags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCozG4NVDqNNQa2l8-IRxahX3ZCcoAoN02dyukzOr7l2FRH7AEMqib-7FSHaoWiTYKmpmDswE8yveMeWCd1fQkY57Zq_rPoopFZ3nTVj_Rd133fE6Wxekghc8KIFaDzGGBZnl_t6D0DyC7RCLDtA5b5JsiRg7KN5eRb_b_jS3tVxukwMzcJ0jzZ2jpJTgiby2W_AQbIf_VPjSIc5Y_l4yqrhSlmvVPHPE8YQ3TJHH8a"/>
+</div>
+<div class="floating-badge absolute -bottom-6 -left-6 bg-surface p-5 rounded-xl shadow-xl hidden md:flex items-center gap-4 max-w-xs border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-[32px]">verified</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">Min. 15 Pieces</p>
+<p class="font-body-sm text-[12px] text-secondary">Lower prices for bigger orders</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: OUR STORY -->
+<section class="w-full bg-surface-container-lowest py-space-xl lg:py-28">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
+<!-- Story Visual (5 cols) -->
+<div class="lg:col-span-5 relative reveal-on-scroll is-revealed">
+<div class="luxury-card aspect-[3/4] rounded-xl overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Artisan hands delicately stringing miniature pearls onto heavy duty silk cord, close up macro shot showing meticulous bead craftsmanship in warm natural light, soft textured linen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBed-U38RhdJU0Yrr3m-t8E72rVlijvKpPz0ui2cuWEp0se1AdQJKc61N62KDkrIPzkKeWELp18mD0EWji7f8STPP4h8h2dj0vF0FYLAa2HsVhkWh8kbJA4YIRq1fluFnxlj2c0nkJJkY6yCsVheDeYXSLyKlQDQ7oMnGoHmlO9i8fGgCEUUFpSEyFGD6jmw1_u10O8YZb4fIeQxXn-_WvE6VR2it_wji0Oedwv2jOO"/>
+</div>
+<!-- Quote Badge -->
+<div class="absolute bottom-6 right-6 lg:-right-6 bg-primary-container text-on-primary p-6 rounded-xl shadow-xl max-w-xs hover:-translate-y-1 transition-transform duration-300">
+<span class="material-symbols-outlined text-[24px] mb-2 opacity-80">format_quote</span>
+<p class="font-headline-sm text-headline-sm italic leading-snug">
+              "Made by hand, one bead at a time."
+            </p>
+<span class="font-label-caps text-[10px] tracking-widest uppercase mt-2 block opacity-80">— PEACHE</span>
+</div>
+</div>
+<!-- Story Narrative (7 cols) -->
+<div class="lg:col-span-7 flex flex-col items-start lg:pl-space-lg mt-space-lg lg:mt-0 reveal-on-scroll is-revealed">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.2em] mb-space-xs">Our Story</span>
+<h2 class="font-headline-lg text-display-md text-primary leading-tight mb-space-md">
+            The beauty is in the details.
+          </h2>
+<div class="space-y-space-md text-secondary font-light font-body-lg text-body-lg leading-relaxed mb-space-lg">
+<p class="">
+              At PEACHE we take our time. Every bag is made by hand from pearls, crystals and small metal beads, and each one takes hours of careful work.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              We do not keep stock. We make each bag only when you order it. This means less waste, and your bag is made just for you.
+            </p>
+</div>
+<a class="group inline-flex items-center gap-3 px-8 py-4 border border-outline-variant/60 rounded text-primary font-label-caps text-label-caps uppercase tracking-wider hover:bg-secondary-container/40 hover:border-primary transition-all duration-300" href="#">
+<span class="">READ ABOUT US</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: INSTAGRAM GALLERY -->
+<section class="w-full bg-surface py-space-xl lg:py-24">
+<div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg reveal-on-scroll is-revealed">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-[0.2em] mb-1 block">Instagram</span>
+<h2 class="font-headline-lg text-display-sm md:text-headline-lg text-primary">A little more PEACHE</h2>
+<p class="font-body-md text-body-md text-secondary font-light mt-1">@peache.workshop on Instagram</p>
+</div>
+<a class="group mt-4 sm:mt-0 inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary hover:text-primary-container transition-colors" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<span class="">FOLLOW US ON INSTAGRAM</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- 5-image minimal gallery grid -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 reveal-on-scroll is-revealed">
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container luxury-card" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" data-alt="Chic woman in silk saree holding pearl beaded handbag at an evening wedding reception, soft glowing chandeliers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT8DLWX9zC_Pz42IinRNSi7hdY46kZy5lfptTzN-uzjXv5gow8wjEB80zaEheuT4N0D8ApbS4hoNwzgDUAezDmkwgqXuYP5kj5NaRSMfTajEuwhrPScb-4e5NYzVZTuvOC48h7Z_R-hWToJ0VIhrlJ2j_1wnQn_NZzHg7iY9kEXqD3JxUcRIMHpKF6ngIl1YSs8pK3_lOOaQhkq5ecB7lXRh1bOn8tsakmDFG0CKFd"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container luxury-card" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" data-alt="Flatlay of crystal beaded bag alongside a champagne coupe and antique gold mirror on beige travertine table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVc-YiyguKZ76AXcHeEUo1XtBsuya1gjuUmk1_1cKoR_gt4Iixor2JXn3CPo81am7H7LTb9ToC0aaL6iSggWP3HXR_6ReuPVFAYbSroP5tIVH3zpZrcaP49u3qkl9viqOrsXq2e-VQpSI6oBDKgXuSta9orH24jkrAuz7EGLXbiUjwGy8a4meSpmGcC_O0VBX-9Ii2ImUSx9D-UXrxdnyCVS__En4-xF6YUzY2Lwoz"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container luxury-card" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" data-alt="Stacked ivory gift boxes tied with silk peach ribbons for wedding favour guests, elegant handwritten calligraphy cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa0uVwFEiD2sdL3JCESqiTZxmZHFThPSgsbxYfG58z0RMneCETSf_ASNdSscy30uyphh8vWnxdUOIw-PtzDmPROaQsWsDnEXuQyYPnZAor1in617XKh5JbpSFKI1Bg0BkShrUYUizFOgbD3sYUCA70t04AGxGr6hNWRzaEe_8E5SH-Aj7R-gFfXaVW5tXqQs_M_6laz1QtNn-cBT_w9-FmHanrHxb62wgywhxH8QEo"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container luxury-card" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" data-alt="Artisan studio table detail with glass bead bowls, needles, and a half-finished bridal purse in progress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5myyUlmsWupwnGtSGZeXSpsnh439kSlFmoU5hHLcASOU8-0XHmqXX8YO2rH7IyeyxwhvMa12tthiSfH-QUJxvNsb2wa96DSkkqNtiILMLSxSDTdmY7mMc2XlWR6l-GAIIwRmND7KqpzgucqakkvZP7eCuEPGmlzyJW-kqUJWG9e6k2XceXNQtqVqSwSumFwfPXD6InqkDa0VP7DkFwBe_Gsq_gwB3HL2_1KVtei8O"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container col-span-2 md:col-span-1 luxury-card" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" data-alt="Close up of customized monogram bead initial on a bridal favor pouch with gold thread accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzK5mvJVhHBlN-OdCRmNT5AiobGlkavSl2zIBTrwTfwf1O8t7lfuF8VQOC_SLxLkktvRzDHbWTXp3J3LJzIp8fPyz3P7nrz4b1zb2U82bnUtvYBtnEWtW0a9AYw1FZmq-S95iLiF2bqUbLLYW3OPRPzWpYKsDdQaWEW9fGmjaFDQmvC-6T_TLcCRPTC-n00dJb5rSTKYffDS55gCWHTj0Vvh9BgC0VMw9Kh4MkQUYy"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- MODAL: ORDER REQUEST -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden p-4 transition-all duration-300" id="order-modal">
+<div class="bg-surface rounded-xl max-w-lg w-full p-space-lg shadow-2xl relative border border-outline-variant/40 animate-[fadeInUp_0.3s_ease-out]">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-1" onclick="closeRequestModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="mb-4">
+<span class="font-label-caps text-[10px] uppercase text-secondary tracking-widest">Made by hand</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-1" id="modal-product-name">Request Piece</h3>
+<p class="font-body-md text-body-md text-primary-container font-medium mt-1" id="modal-product-price"></p>
+</div>
+<p class="font-body-sm text-body-sm text-secondary font-light mb-4">
+        Every PEACHE bag is made after you order. Delivery takes 5–15 days in India and 15–25 days worldwide. Share your details and we will message you on WhatsApp to confirm.
+      </p>
+<form class="space-y-3" onsubmit="handleOrderSubmit(event)">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Your Full Name</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="Aarohi Sharma" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">WhatsApp Contact</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="+91 98765 43210" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Event Date / Notes (Optional)</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="Required for wedding on 24th Nov" type="text"/>
+</div>
+<button class="btn-pearl-luster w-full mt-4 py-3 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-wider rounded hover:bg-primary transition-all duration-300 shadow-sm active:scale-[0.98]" type="submit">
+          Send Workshop Request
+        </button>
+</form>
+</div>
+</div>
+<!-- MODAL: WEDDING FAVOUR CONCIERGE -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden p-4 transition-all duration-300" id="favour-modal">
+<div class="bg-surface rounded-xl max-xl w-full p-space-lg shadow-2xl relative max-h-[90vh] overflow-y-auto border border-outline-variant/40 animate-[fadeInUp_0.3s_ease-out]">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-1" onclick="document.getElementById('favour-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="mb-4">
+<span class="font-label-caps text-[10px] uppercase text-secondary tracking-widest">Wedding Orders</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Wedding Favour Orders</h3>
+<p class="font-body-sm text-body-sm text-secondary font-light mt-1">
+          Minimum 15 pieces. Initials, gift boxes and your choice of colours are included.
+        </p>
+</div>
+<form class="space-y-3" onsubmit="handleFavourSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Full Name</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="Bride / Groom / Planner Name" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">WhatsApp / Phone</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="+91 98765 43210" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Estimated Guest Count / Units</label>
+<select class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors">
+<option>15 – 30 pieces</option>
+<option>30 – 60 pieces</option>
+<option>60 – 120 pieces</option>
+<option>120+ pieces (Grand)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Wedding / Event Date</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" required="" type="date"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1">Customization Requests</label>
+<textarea class="w-full px-3 py-2 bg-surface-container-lowest rounded border border-outline-variant/60 focus:border-primary-container focus:outline-none font-body-sm text-on-surface transition-colors" placeholder="Preferred color palette, bride/groom initials, specific silhouette preference..." rows="3"></textarea>
+</div>
+<button class="btn-pearl-luster w-full mt-4 py-3.5 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-wider rounded hover:bg-primary transition-all duration-300 shadow-sm active:scale-[0.98]" type="submit">
+          Submit Wedding Favour Request
+        </button>
+</form>
+</div>
+</div>
+<!-- CART SLIDE-OVER DRAWER -->
+<div aria-hidden="true" class="fixed inset-0 z-50 overflow-hidden pointer-events-none" id="cart-drawer-container">
+<!-- Soft blur backdrop overlay -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none" id="cart-backdrop" onclick="closeCartDrawer()"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
+<!-- Drawer Panel -->
+<div aria-label="Atelier Bag" aria-modal="true" class="w-screen max-w-md md:max-w-lg bg-surface text-on-surface shadow-2xl flex flex-col h-full transform translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-auto border-l border-outline-variant/30" id="cart-panel" role="dialog">
+<!-- Drawer Header -->
+<div class="px-6 py-5 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-wide" id="cart-heading">Your Bag <span class="text-secondary font-normal text-sm" id="cart-drawer-count">(0 Bags)</span></h2>
+<span class="font-label-caps text-[10px] uppercase text-secondary tracking-widest">Made after you order</span>
+</div>
+</div>
+<button aria-label="Close Bag" class="p-2 -mr-2 text-on-surface-variant hover:text-primary hover:rotate-90 transition-all duration-200 rounded-full hover:bg-surface-container-high" onclick="closeCartDrawer()">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Progress / Courier Reassurance Banner -->
+<div class="bg-secondary-container/50 px-6 py-3 border-b border-outline-variant/20 flex flex-col gap-1.5" id="cart-progress-banner">
+<div class="flex items-center justify-between text-[11px] font-label-caps uppercase tracking-wider text-primary">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="">Delivery: 5–15 days in India</span>
+</span>
+<span class="text-secondary font-medium">Worldwide: 15–25 days</span>
+</div>
+<div class="w-full h-1 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+<!-- Cart Items List (Scrollable Area) -->
+<div class="hidden flex-1 overflow-y-auto px-6 py-6 flex-col items-center" id="cart-empty-view"><div class="w-16 h-16 rounded-full bg-secondary-container/60 border border-outline-variant/40 flex items-center justify-center text-primary mb-4 shadow-sm"><span class="material-symbols-outlined text-[32px]">local_mall</span></div><h3 class="font-headline-sm text-headline-sm text-primary mb-1 text-center">Your Bag is Currently Empty</h3><p class="font-body-sm text-body-sm text-secondary font-light text-center max-w-xs mb-5 leading-relaxed">Every PEACHE bag is made after you order. Look at our bags to get started.</p><a class="btn-pearl-luster px-6 py-2.5 bg-primary-container text-on-primary font-label-caps text-[11px] uppercase tracking-wider rounded hover:bg-primary transition-all duration-300 shadow-xs mb-8" href="#bestsellers" onclick="closeCartDrawer()">See All Bags</a><div class="w-full pt-4 border-t border-outline-variant/30"><div class="flex items-center justify-between mb-3"><span class="font-label-caps text-[11px] uppercase tracking-wider text-primary font-medium">You May Like</span><span class="font-label-caps text-[10px] text-secondary uppercase">Made After You Order</span></div><div class="space-y-3 w-full"><div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all"><div class="flex items-center gap-3"><img alt="The Aurelia Pearl Frame" class="w-12 h-14 object-cover rounded border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRyypm3o1lyzNC06cJH1_Lug1AQ-lD9IaEpJMxo578i7aBhw84Rj7OIx0lY-0mwMN8eYdrhBn__J-lfCiku60WvVx4RHfSzLsbVa7gwsL6Hc76h1E5QZnQCd9odxct_tqUTjVs2pH9X8aX2mvypXbrDC4qdrmxug6Dhy7SDLAbQPPy-vJde9vU2JBjL3y2lMbA09-LOQAwcruU7MKBLuMDcUx_v3M-DoC8970AY7kg"/><div><h4 class="font-headline-sm text-[13px] text-primary leading-tight">The Aurelia Pearl Frame</h4><span class="font-body-sm text-[12px] text-primary font-medium">₹18,500</span></div></div><button class="px-2.5 py-1 text-[11px] font-label-caps uppercase text-primary border border-outline-variant/60 rounded hover:bg-primary-container hover:text-on-primary transition-all duration-200" onclick="addSuggestedToCart('The Aurelia Pearl Frame', 18500, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRyypm3o1lyzNC06cJH1_Lug1AQ-lD9IaEpJMxo578i7aBhw84Rj7OIx0lY-0mwMN8eYdrhBn__J-lfCiku60WvVx4RHfSzLsbVa7gwsL6Hc76h1E5QZnQCd9odxct_tqUTjVs2pH9X8aX2mvypXbrDC4qdrmxug6Dhy7SDLAbQPPy-vJde9vU2JBjL3y2lMbA09-LOQAwcruU7MKBLuMDcUx_v3M-DoC8970AY7kg', 'Freshwater Pearl (White) • Bespoke Monogram')">+ Add to Bag</button></div><div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all"><div class="flex items-center gap-3"><img alt="The Celestia Minaudière" class="w-12 h-14 object-cover rounded border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOA7xcx3pq2HBhgL2DQccKNgSEHSXC0sen7yKUbPwjw55WzYNRjnDwGp_St9oljhNu4fuvO8N9dsu31ixEGv1VhxG1pwE3O-jPdg1wNH2M6I0DzlN7GzQqDmvial3xXyoFe4tPx5Im0QAYB6ek4Ffg3zn1m4KpOpSOXM7xm6NM1o32E_xzgbZDkuEP_jmzdfUKrzyxoT1vhze2jzn-4vVCNvtbtPN39S6Ar1hY9RF6"/><div><h4 class="font-headline-sm text-[13px] text-primary leading-tight">The Celestia Minaudière</h4><span class="font-body-sm text-[12px] text-primary font-medium">₹22,000</span></div></div><button class="px-2.5 py-1 text-[11px] font-label-caps uppercase text-primary border border-outline-variant/60 rounded hover:bg-primary-container hover:text-on-primary transition-all duration-200" onclick="addSuggestedToCart('The Celestia Minaudière', 22000, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCOA7xcx3pq2HBhgL2DQccKNgSEHSXC0sen7yKUbPwjw55WzYNRjnDwGp_St9oljhNu4fuvO8N9dsu31ixEGv1VhxG1pwE3O-jPdg1wNH2M6I0DzlN7GzQqDmvial3xXyoFe4tPx5Im0QAYB6ek4Ffg3zn1m4KpOpSOXM7xm6NM1o32E_xzgbZDkuEP_jmzdfUKrzyxoT1vhze2jzn-4vVCNvtbtPN39S6Ar1hY9RF6', 'Intricate Crystal Lattice • Brass Clasp')">+ Add to Bag</button></div><div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all"><div class="flex items-center gap-3"><img alt="The Paloma Ivory Pouch" class="w-12 h-14 object-cover rounded border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5cJRbQC8jKLluwKnsT2Ps8i48z4sUmBaFVCDTgUzeA1UlkRlsL5plTA_O7KSctUIo2XPru0SHwyCynUnQKuNwLUPeVGG0VtYZmbo974efJ8Uk7loX7hLT0Tbaf1tF9qVFz_UyylZbnWQxYGVHJmyHu1awO1Uvh6ZG2KJoFx15HmS9MejjQXr3kmth7xBtko2GHVUnyoDP9xJaTz3OzHwS0BLoOgq39lQBoiX2gxiA"/><div><h4 class="font-headline-sm text-[13px] text-primary leading-tight">The Paloma Ivory Pouch</h4><span class="font-body-sm text-[12px] text-primary font-medium">₹14,800</span></div></div><button class="px-2.5 py-1 text-[11px] font-label-caps uppercase text-primary border border-outline-variant/60 rounded hover:bg-primary-container hover:text-on-primary transition-all duration-200" onclick="addSuggestedToCart('The Paloma Ivory Pouch', 14800, 'https://lh3.googleusercontent.com/aida-public/AB6AXuB5cJRbQC8jKLluwKnsT2Ps8i48z4sUmBaFVCDTgUzeA1UlkRlsL5plTA_O7KSctUIo2XPru0SHwyCynUnQKuNwLUPeVGG0VtYZmbo974efJ8Uk7loX7hLT0Tbaf1tF9qVFz_UyylZbnWQxYGVHJmyHu1awO1Uvh6ZG2KJoFx15HmS9MejjQXr3kmth7xBtko2GHVUnyoDP9xJaTz3OzHwS0BLoOgq39lQBoiX2gxiA', 'Soft Pearl Weave • Pure Silk Drawstring')">+ Add to Bag</button></div></div></div><div class="w-full mt-5 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 shadow-xs relative overflow-hidden"><div class="flex items-center justify-between mb-2"><div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-primary font-label-caps text-[9px] uppercase tracking-wider border border-outline-variant/30"><span class="material-symbols-outlined text-[12px] text-primary">auto_awesome</span><span class="">Free Style Help</span></div><span class="font-label-caps text-[9px] text-secondary uppercase tracking-widest">Help</span></div><h4 class="font-headline-sm text-[15px] text-primary tracking-wide leading-snug">Help Choosing a Bag</h4><p class="font-body-sm text-[12px] text-secondary font-light mt-1 leading-relaxed">Not sure which bag to pick? Tell us about your outfit and we will help.</p><div class="mt-3 pt-3 border-t border-outline-variant/20 space-y-1.5"><div class="flex items-start gap-2 text-[11px] text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[14px] text-primary mt-0.5">palette</span><span class=""><strong>Outfit &amp; Swatch Color Matching</strong> — Share lehenga, saree, or gown swatches</span></div><div class="flex items-start gap-2 text-[11px] text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[14px] text-primary mt-0.5">draw</span><span class=""><strong>Initials and Wedding Dates</strong> — Custom initials or wedding dates</span></div><div class="flex items-start gap-2 text-[11px] text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[14px] text-primary mt-0.5">event_available</span><span class=""><strong>Express Delivery Scheduling</strong> — Guaranteed dispatch ahead of your event</span></div></div><div class="mt-3.5 flex flex-col gap-1.5"><a class="btn-pearl-luster w-full py-2.5 px-3 bg-primary-container text-on-primary font-label-caps text-[11px] uppercase tracking-wider rounded flex items-center justify-center gap-2 hover:bg-primary transition-all duration-300 shadow-xs" href="https://wa.me/?text=Hello%20PEACHE%20Atelier%2C%20I%20would%20love%20a%20bridal%20styling%20consultation%20for%20my%20upcoming%20wedding." rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span><span class="">Chat with Us on WhatsApp</span></a><div class="flex items-center justify-center gap-2 text-[10px] font-label-caps text-secondary uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-[#4d7c0f] animate-pulse"></span><span class="">We reply on WhatsApp</span></div></div></div></div><div class="flex-1 overflow-y-auto px-6 py-4 divide-y divide-outline-variant/30 space-y-4" id="cart-items-container">
+</div>
+<!-- Drawer Footer & Order Summary -->
+<div class="px-6 py-5 bg-surface-container-low border-t border-outline-variant/30 space-y-3" id="cart-drawer-footer">
+<div class="space-y-1.5 font-body-sm text-[13px] text-secondary">
+<div class="flex justify-between items-center">
+<span class="">Subtotal</span>
+<span class="font-medium text-primary" id="drawer-subtotal">₹0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="flex items-center gap-1">
+<span class="">Delivery</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" title="Complimentary door-to-door courier with atelier insurance">help_outline</span>
+</span>
+<span class="text-primary font-medium">Free</span>
+</div>
+<div class="flex justify-between items-center text-[12px] text-outline">
+<span class="">Delivery in India</span>
+<span class="">5–15 days</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-headline-sm text-[17px] text-primary">Estimated Total</span>
+<span class="font-headline-sm text-[20px] text-primary font-medium" id="drawer-total">₹0</span>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="btn-pearl-luster w-full py-4 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-[0.18em] rounded hover:bg-primary transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-2" id="drawer-checkout-btn" onclick="handleDrawerCheckout()">
+<span class="">Proceed to Order Request</span>
+<span class="text-[12px] opacity-90" id="drawer-checkout-price">(₹0)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<!-- Secondary Reassurance & WhatsApp Concierge -->
+<div class="pt-2 border-t border-outline-variant/30 flex flex-col gap-2"><div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-full bg-secondary-container/70 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[17px]">styler</span></div><div><p class="font-headline-sm text-[12px] text-primary leading-tight font-medium">Help Choosing a Bag</p><p class="font-body-sm text-[10px] text-secondary">Outfit &amp; swatch matching • Monogram previews</p></div></div><a class="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary-container text-primary font-label-caps text-[10px] uppercase rounded hover:bg-primary-container hover:text-on-primary transition-colors" href="https://wa.me/?text=Hello%20PEACHE%20Atelier%2C%20I%20would%20like%20guidance%20on%20my%20bag%20selection%20and%20outfit%20matching." rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[13px]">chat</span><span class="">Chat</span></a></div><p class="font-body-sm text-[10px] text-secondary flex items-center justify-center gap-1.5 leading-tight text-center"><span class="material-symbols-outlined text-[13px] text-primary">lock</span><span class="">You pay nothing now. We confirm on WhatsApp first.</span></p></div>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-[#F8E5DC] border-t border-[#EAD8D0] pt-space-xl pb-space-lg"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg lg:gap-gutter-desktop pb-space-xl border-b border-[#EAD8D0]"><div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-space-md"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="PEACHE" class="h-7 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDElcbmP1PdGJWWRlpi_1O6fpP6TvRRE9YjbkE_AX5uyBEHnL1oW2ocjNuMZSx42R06u5a_e2WqH8CCLAQFanByN4SooKq45glOhzptM4PWFgztK0HsemNC85tobzbAm-B4kL4BueTj1HEKBepmHXk56dwajT_rUjscE6FH8cjl9MwsaD1N29PPo1vrOETqLA9UPikbfd9CxkCWVcPDSebOg6HmyKVYNJcqmkLAMKbLAyeWS5QmCVZxfA"/></div><p class="font-body-md text-body-md text-[#73564F] max-w-sm font-light leading-relaxed mb-space-md">Beaded handbags made by hand after you order.</p><p class="font-body-sm text-body-sm text-[#9B6254] mt-3">Delivery: 5–15 days in India · 15–25 days worldwide</p><div class="flex items-center gap-space-md text-[#9B6254]"><a aria-label="Atelier Concierge via WhatsApp" class="hover:text-[#D98F78] transition-colors flex items-center gap-1 font-label-sm text-label-sm" href="https://wa.me/919999999999"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp Support</span></a><a aria-label="Instagram Journal" class="hover:text-[#D98F78] transition-colors flex items-center gap-1 font-label-sm text-label-sm" href="https://instagram.com/peache.atelier"><span class="material-symbols-outlined text-[18px]">photo_camera</span><span>@peache.workshop</span></a></div></div><div class="lg:col-span-2"><h3 class="font-label-caps text-label-caps uppercase text-[#9B6254] mb-space-md">Collections</h3><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-[#73564F]"><li><a class="hover:text-[#D98F78] transition-colors" data-path="shop-all" href="shop.html">Shop All</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="the-pearl-edit" href="shop.html?c=pearl">The Pearl Edit</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="the-crystal-edit" href="shop.html?c=crystal">The Crystal Edit</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="the-wedding-favour-edit" href="shop.html?c=wedding">The Wedding Favour Edit</a></li></ul></div><div class="lg:col-span-3"><h3 class="font-label-caps text-label-caps uppercase text-[#9B6254] mb-space-md">Client Care</h3><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-[#73564F]"><li><a class="hover:text-[#D98F78] transition-colors" data-path="order-process" href="faq.html">How to Order</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="bespoke-enquiries" href="index.html#wedding-favours">Custom Orders</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="shipping-policy" href="shipping.html">Shipping Policy</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="returns-and-refunds" href="returns.html">Returns &amp; Refunds</a></li><li><a class="hover:text-[#D98F78] transition-colors" data-path="faqs" href="faq.html">FAQs</a></li></ul></div><div class="lg:col-span-3 flex flex-col"><h3 class="font-label-caps text-label-caps uppercase text-[#9B6254] mb-space-md">Our Newsletter</h3><p class="font-body-sm text-body-sm text-[#73564F] mb-space-sm font-light">Get news about new bags.</p><form class="flex flex-col gap-space-xs"><div class="flex items-center border border-[#EAD8D0] bg-[#FFFFFF] focus-within:border-[#D98F78] transition-colors rounded"><input class="w-full px-space-sm py-2.5 bg-transparent font-body-sm text-body-sm text-[#73564F] placeholder:text-[#73564F]/60 focus:outline-none" placeholder="Enter your email" type="email"/><button class="px-space-md py-2.5 bg-[#D98F78] text-[#FFFFFF] font-label-caps text-label-caps uppercase hover:bg-[#9B6254] transition-colors flex-shrink-0" type="button">Subscribe</button></div><span class="font-label-sm text-[10px] text-[#73564F]/80">You can unsubscribe anytime.</span></form><div class="mt-space-md flex flex-wrap gap-x-space-md gap-y-1 font-body-sm text-body-sm text-[#73564F]"><li><a class="hover:text-[#9B6254] transition-colors list-none" data-path="our-story" href="about.html">Our Story</a></li><li><a class="hover:text-[#9B6254] transition-colors list-none" data-path="craftsmanship" href="about.html">How We Make Bags</a></li><li><a class="hover:text-[#9B6254] transition-colors list-none" data-path="terms-and-conditions" href="terms.html">Terms &amp; Conditions</a></li><li><a class="hover:text-[#9B6254] transition-colors list-none" data-path="privacy-policy" href="privacy.html">Privacy Policy</a></li></div></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-caps text-label-caps text-[#73564F]/90"><p>© 2026 PEACHE. MADE BY HAND.</p><div class="flex items-center gap-space-md"><span>PRICING &amp; BILLING IN INR (₹)</span><span class="inline-block w-1 h-1 rounded-full bg-[#EAD8D0]"></span><span>ALL RIGHTS RESERVED</span></div></div></div></footer><script>
+  // 1. Intersection Observer for Smooth Scroll Reveal Animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry, idx) => {
+          if (entry.isIntersecting) {
+            // Apply slight progressive stagger
+            setTimeout(() => {
+              entry.target.classList.add('is-revealed');
+            }, 60 * (idx % 4));
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('is-revealed'));
+    }
+
+    // 2. Wishlist Toggle & Micro-interaction
+    const heartButtons = document.querySelectorAll('.heart-btn');
+    const wishlistCountEl = document.getElementById('nav-wishlist-count');
+    let wishlistCount = 0;
+
+    heartButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = btn.classList.toggle('is-active');
+        
+        if (isActive) {
+          wishlistCount++;
+        } else {
+          wishlistCount = Math.max(0, wishlistCount - 1);
+        }
+        
+        if (wishlistCountEl) {
+          wishlistCountEl.textContent = wishlistCount;
+          wishlistCountEl.style.transform = 'scale(1.35)';
+          setTimeout(() => {
+            wishlistCountEl.style.transform = 'scale(1)';
+          }, 250);
+        }
+      });
+    });
+
+    // 3. Hero 3D Tilt Parallax Effect
+    const tiltContainer = document.querySelector('.tilt-card-container');
+    const tiltCard = document.getElementById('hero-tilt-card');
+    
+    if (tiltContainer && tiltCard && window.matchMedia('(hover: hover)').matches) {
+      tiltContainer.addEventListener('mousemove', (e) => {
+        const rect = tiltContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -5.5;
+        const rotateY = ((x - centerX) / centerX) * 5.5;
+        
+        tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+      });
+      
+      tiltContainer.addEventListener('mouseleave', () => {
+        tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    }
+
+    // 4. Interactive Collection Filter Pills
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const productCards = document.querySelectorAll('#product-grid > div');
+
+    window.filterBestsellers = function(filterCategory) {
+      filterPills.forEach(pill => {
+        const matches = pill.getAttribute('data-filter') === filterCategory;
+        if (matches) {
+          pill.classList.remove('bg-surface-container-high', 'text-secondary');
+          pill.classList.add('bg-primary-container', 'text-on-primary', 'shadow-xs');
+        } else {
+          pill.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-xs');
+          pill.classList.add('bg-surface-container-high', 'text-secondary');
+        }
+      });
+
+      productCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (filterCategory === 'all' || cardCat === filterCategory) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    };
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const cat = pill.getAttribute('data-filter');
+        filterBestsellers(cat);
+      });
+    });
+
+    // 5. Interactive Newsletter Subscription
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterInput = document.getElementById('newsletter-input');
+    const newsletterStatus = document.getElementById('newsletter-status');
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (newsletterInput && newsletterInput.value) {
+          newsletterInput.value = '';
+          if (newsletterStatus) {
+            newsletterStatus.classList.remove('hidden');
+            newsletterStatus.classList.add('flex');
+            setTimeout(() => {
+              newsletterStatus.classList.add('hidden');
+              newsletterStatus.classList.remove('flex');
+            }, 6000);
+          }
+        }
+      });
+    }
+
+    // 6. Keyboard Escape listener for Drawers and Modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCartDrawer();
+        closeRequestModal();
+        const favourModal = document.getElementById('favour-modal');
+        if (favourModal) favourModal.classList.add('hidden');
+      }
+    });
+  });
+
+  // CART SLIDE-OVER DRAWER CONTROLLER
+  let cartTotalAmount = 0;
+  let cartItemCount = 0;
+
+  function openCartDrawer() {
+    const container = document.getElementById('cart-drawer-container');
+    const backdrop = document.getElementById('cart-backdrop');
+    const panel = document.getElementById('cart-panel');
+    
+    if (!container || !backdrop || !panel) return;
+    
+    container.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100', 'pointer-events-auto');
+    
+    panel.classList.remove('translate-x-full');
+    panel.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCartDrawer() {
+    const container = document.getElementById('cart-drawer-container');
+    const backdrop = document.getElementById('cart-backdrop');
+    const panel = document.getElementById('cart-panel');
+    
+    if (!container || !backdrop || !panel) return;
+    
+    panel.classList.remove('translate-x-0');
+    panel.classList.add('translate-x-full');
+    
+    backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    
+    setTimeout(() => {
+      container.classList.add('pointer-events-none');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  function updateCartDisplay() {
+    const subtotalEl = document.getElementById('drawer-subtotal');
+    const totalEl = document.getElementById('drawer-total');
+    const checkoutPriceEl = document.getElementById('drawer-checkout-price');
+    const cartCounterEl = document.getElementById('cart-counter');
+    const drawerCountEl = document.getElementById('cart-drawer-count');
+
+    const formatted = '₹' + cartTotalAmount.toLocaleString('en-IN');
+    if (subtotalEl) subtotalEl.textContent = formatted;
+    if (totalEl) totalEl.textContent = formatted;
+    if (checkoutPriceEl) checkoutPriceEl.textContent = `(${formatted})`;
+    if (cartCounterEl){cartCounterEl.textContent = cartItemCount;cartCounterEl.style.display = cartItemCount?'flex':'none';}
+    if (drawerCountEl) drawerCountEl.textContent = `(${cartItemCount} Bags)`;
+  }
+
+  function changeQty(qtyElementId, delta, itemPrice) {
+    const el = document.getElementById(qtyElementId);
+    if (!el) return;
+    let qty = parseInt(el.textContent, 10);
+    if (qty + delta < 1) return;
+    qty += delta;
+    el.textContent = qty;
+
+    cartTotalAmount += delta * itemPrice;
+    if (delta > 0) cartItemCount += 1;
+    else cartItemCount = Math.max(1, cartItemCount - 1);
+    updateCartDisplay();
+  }
+
+  function removeCartItem(itemId, itemPrice) {
+    const itemEl = document.getElementById(itemId);
+    if (!itemEl) return;
+    
+    itemEl.style.transition = 'all 0.3s ease';
+    itemEl.style.opacity = '0';
+    itemEl.style.transform = 'translateX(20px)';
+    
+    setTimeout(() => {
+      itemEl.remove();
+      cartTotalAmount = Math.max(0, cartTotalAmount - itemPrice);
+      cartItemCount = Math.max(0, cartItemCount - 1);
+      updateCartDisplay();
+      
+      const remainingItems = document.querySelectorAll('#cart-items-container > div');
+      if (remainingItems.length === 0) {
+        document.getElementById('cart-items-container').innerHTML = `
+          <div class="py-16 text-center">
+            <span class="material-symbols-outlined text-[48px] text-outline mb-2">shopping_bag</span>
+            <p class="font-headline-sm text-primary">Your Atelier Bag is Empty</p>
+            <p class="font-body-sm text-secondary mt-1">Discover our couture collections to begin your order request.</p>
+            <button onclick="closeCartDrawer()" class="mt-4 px-6 py-2.5 bg-primary-container text-on-primary font-label-caps text-xs uppercase tracking-wider rounded">Explore Creations</button>
+          </div>
+        `;
+      }
+    }, 300);
+  }
+
+  function handleDrawerCheckout() {
+    closeCartDrawer();
+    openRequestModal('Your Bag (' + cartItemCount + ' bags)', '₹' + cartTotalAmount.toLocaleString('en-IN'));
+  }
+
+  // Modal Controllers
+  function openRequestModal(productName, price) {
+    document.getElementById('modal-product-name').textContent = productName;
+    document.getElementById('modal-product-price').textContent = price + ' (made after you order)';
+    document.getElementById('order-modal').classList.remove('hidden');
+  }
+
+  function closeRequestModal() {
+    document.getElementById('order-modal').classList.add('hidden');
+  }
+
+  function handleOrderSubmit(e) {
+    e.preventDefault();
+    alert('Thank you. We will message you on WhatsApp soon to confirm your order.');
+    closeRequestModal();
+  }
+
+  function handleFavourSubmit(e) {
+    e.preventDefault();
+    alert('We got your wedding favour request. We will message you on WhatsApp soon.');
+    document.getElementById('favour-modal').classList.add('hidden');
+  }
+</script>
+<script class="">
+  window.setCartView = function(view) {
+    const emptyView = document.getElementById('cart-empty-view');
+    const itemsContainer = document.getElementById('cart-items-container');
+    const banner = document.getElementById('cart-progress-banner');
+    const footer = document.getElementById('cart-drawer-footer');
+    const btnEmpty = document.getElementById('btn-view-empty');
+    const btnLoaded = document.getElementById('btn-view-loaded');
+    const drawerCount = document.getElementById('cart-drawer-count');
+
+    if (view === 'empty') {
+      if (emptyView) {
+        emptyView.classList.remove('hidden');
+        emptyView.classList.add('flex');
+      }
+      if (itemsContainer) itemsContainer.classList.add('hidden');
+      if (banner) banner.classList.add('hidden');
+      if (footer) footer.classList.add('hidden');
+      if (btnEmpty) {
+        btnEmpty.className = 'px-2.5 py-1 text-[11px] font-label-caps uppercase rounded bg-primary-container text-on-primary shadow-xs transition-all duration-200';
+      }
+      if (btnLoaded) {
+        btnLoaded.className = 'px-2.5 py-1 text-[11px] font-label-caps uppercase rounded text-secondary hover:text-primary transition-all duration-200';
+      }
+      if (drawerCount) drawerCount.textContent = '(0 Pieces)';
+    } else {
+      if (emptyView) {
+        emptyView.classList.add('hidden');
+        emptyView.classList.remove('flex');
+      }
+      if (itemsContainer) itemsContainer.classList.remove('hidden');
+      if (banner) banner.classList.remove('hidden');
+      if (footer) footer.classList.remove('hidden');
+      if (btnEmpty) {
+        btnEmpty.className = 'px-2.5 py-1 text-[11px] font-label-caps uppercase rounded text-secondary hover:text-primary transition-all duration-200';
+      }
+      if (btnLoaded) {
+        btnLoaded.className = 'px-2.5 py-1 text-[11px] font-label-caps uppercase rounded bg-primary-container text-on-primary shadow-xs transition-all duration-200';
+      }
+      if (drawerCount) drawerCount.textContent = '(' + cartItemCount + ' Bags)';
+    }
+  };
+
+  window.addSuggestedToCart = function(title, price, img, details) {
+    const container = document.getElementById('cart-items-container');
+    if (!container) return;
+    const id = 'cart-item-' + Date.now();
+    const newItem = document.createElement('div');
+    newItem.id = id;
+    newItem.className = 'pt-4 flex gap-4 items-start group';
+    newItem.innerHTML = `
+      <div class="relative w-20 h-24 rounded-lg overflow-hidden bg-surface-container-low flex-shrink-0 border border-outline-variant/30">
+        <img alt="${title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="${img}"/>
+      </div>
+      <div class="flex-1 flex flex-col justify-between min-h-[96px]">
+        <div>
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-headline-sm text-[17px] text-primary leading-snug">${title}</h3>
+            <button aria-label="Remove item" class="text-outline hover:text-error transition-colors p-1 -mt-1 -mr-1" onclick="removeCartItem('${id}', ${price})">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+          <p class="font-body-sm text-[12px] text-secondary mt-0.5">${details}</p>
+          <div class="inline-flex items-center gap-1.5 mt-1.5 px-2 py-0.5 rounded bg-surface-container text-secondary text-[10px] font-label-caps uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[12px]">schedule</span>
+            <span>Weave Time: 5–15 days</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+          <div class="flex items-center border border-outline-variant/60 rounded bg-surface-container-lowest">
+            <button aria-label="Decrease quantity" class="px-2 py-0.5 text-secondary hover:text-primary transition-colors text-sm" onclick="changeQty('qty-${id}', -1, ${price})">−</button>
+            <span class="px-2 text-xs font-medium text-primary min-w-[20px] text-center" id="qty-${id}">1</span>
+            <button aria-label="Increase quantity" class="px-2 py-0.5 text-secondary hover:text-primary transition-colors text-sm" onclick="changeQty('qty-${id}', 1, ${price})">+</button>
+          </div>
+          <span class="font-headline-sm text-[16px] text-primary font-medium">₹${price.toLocaleString('en-IN')}</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(newItem);
+    cartTotalAmount += price;
+    cartItemCount += 1;
+    updateCartDisplay();
+    setCartView('loaded');
+  };
+</script><script src="site.js"></script></body></html>
